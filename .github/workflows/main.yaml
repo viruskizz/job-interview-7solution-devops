@@ -24,6 +24,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: "./app"
+          context: "{{defaultContext}}:app"
           push: true
           tags: "${{vars.DOCKERHUB_USERNAME}}/${{vars.DOCKERHUB_REPO}}:latest"
