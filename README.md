@@ -20,17 +20,21 @@ The sample application is developed using Go. Our development team would like to
 
 **Expected Output:** IaC code
 
-* Condition: Avoid injecting the generated GCP access keys to the application directly. **Expected Output:** Kustomize manifest, IaC code or anything to complete this task.
+* Condition: Avoid injecting the generated GCP access keys to the application directly.
 
-6. Use ArgoCD to deploy this application. To follow GitOps practices, we prefer to have an ArgoCD application defined declaratively in a YAML file if possible.
+**Expected Output:** Kustomize manifest, IaC code or anything to complete this task.
+
+5. Use ArgoCD to deploy this application. To follow GitOps practices, we prefer to have an ArgoCD application defined declaratively in a YAML file if possible.
 
 **Expected output:** Yaml files and instruction how to deploy the application or command line
 
-7. Create CICD workflow using GitOps pipeline to build and deploy application **Expected output:** GitOps pipeline (Github, Gitlab, Bitbucket, Jenkins) workflow or diagram
+6. Create CICD workflow using GitOps pipeline to build and deploy application
+
+**Expected output:** GitOps pipeline (Github, Gitlab, Bitbucket, Jenkins) workflow or diagram
 
 ## CheckPoint
-- [] Dockerfile
+- [x] Dockerfile
 - [] Kustomize Manifest
-- [] GKE cluster with IaC
+- [x] GKE cluster with IaC
 - [] ArgoCD
 - [] CI/CD
