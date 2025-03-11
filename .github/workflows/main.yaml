@@ -7,9 +7,6 @@ on:
     paths-ignore:
       - 'iac/**'
       - 'argocd/**'
-env:
-  REPO_NAME: "job-interview-7solution-devops"
-  VERSION: "latest"
 
 jobs:
   docker:
@@ -29,4 +26,4 @@ jobs:
         with:
           context: "./app"
           push: true
-          tags: "${{vars.DOCKERHUB_USERNAME}}/$REPO_NAME:$VERSION"
+          tags: "${{vars.DOCKERHUB_USERNAME}}/${{vars.DOCKERHUB_REPO}}:latest"
