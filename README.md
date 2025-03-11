@@ -34,7 +34,7 @@ The sample application is developed using Go. Our development team would like to
 
 ## CheckPoint
 - [x] Dockerfile
-- [] Kustomize Manifest
+- [x] Kustomize Manifest
 - [x] GKE cluster with IaC
-- [] ArgoCD
-- [] CI/CD
+- [x] ArgoCD
+- [x] CI/CD
