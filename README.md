@@ -38,3 +38,40 @@ The sample application is developed using Go. Our development team would like to
 - [x] GKE cluster with IaC
 - [x] ArgoCD
 - [x] CI/CD
+
+## How to
+
+1. Create GKE cluster with terraform
+   ```bash
+   make plan-gke
+   make apply-gke
+   ```
+
+2. Config `.kube`
+    ```bash
+    gcloud container clusters get-credentials $CLUSTER_NAME --region $REGION --project $PROJECT_ID
+    ```
+
+3. Create ArgoCD service with terraform
+   ```bash
+   make plan-argocd
+   make apply-argocd
+   ```
+
+4. Retrieve ArgoCD admin password
+    ```bash
+    ENCRYPTED_PASSWORD=$(kubectl get secret/argocd-initial-admin-secret -o yaml -n argocd | yq .data.password)
+    echo "$ENCRYPTED_PASSWORD" | base64 -d; echo
+    ```
+
+5. Run ArgoCD forword port from local
+    ```bash
+    kubectl port-forward svc/argocd-server -n argocd 8080:443
+    ```
+
+## Example Output
+Example app run on tempary ip address
+\* IP maybe change 
+```bash
+http://35.247.186.158/
+```
