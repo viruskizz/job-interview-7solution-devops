@@ -8,7 +8,7 @@ on:
       - 'iac/**'
       - 'argocd/**'
 env:
-  TAG: "$DOCKERHUB_USERNAME/job-interview-7solution-devops"
+  REPO_NAME: "job-interview-7solution-devops"
   VERSION: "latest"
 
 jobs:
@@ -27,6 +27,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: "{{defaultContext}}:app"
+          context: "./app"
           push: true
-          tags: $TAG:$VERSION
+          tags: "${{vars.DOCKERHUB_USERNAME}}/$REPO_NAME:$VERSION"
