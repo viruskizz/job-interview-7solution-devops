@@ -9,3 +9,7 @@ resource "helm_release" "argocd" {
 
   values = [file("values/argocd.yaml")]
 }
+
+resource "kubernetes_manifest" "app" {
+  manifest = yamldecode(file("../manifests/app.yaml"))
+}
