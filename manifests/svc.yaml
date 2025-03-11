@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: 7solution
+  name: solution
 spec:
   selector:
     app: 7solution
