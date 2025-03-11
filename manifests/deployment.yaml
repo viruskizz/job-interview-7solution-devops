@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 7solution
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: 7solution
+  template:
+    metadata:
+      labels:
+        app: 7solution
+    spec:
+      containers:
+      - image: viruskizz/job-interview-7solution-devops:latest
+        name: 7solution
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: 128Mi
+            cpu: "0.2"
+          limits:
+            memory: 512Mi
+            cpu: "1"

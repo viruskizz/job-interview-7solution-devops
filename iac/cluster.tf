@@ -16,3 +16,4 @@ resource "google_container_cluster" "default" {
 
   # deletion_protection = false
 }
+
