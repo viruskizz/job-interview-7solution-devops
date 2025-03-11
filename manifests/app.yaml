@@ -10,7 +10,7 @@ spec:
     namespace: app
     server: https://kubernetes.default.svc
   source:
-    path: app
+    path: manifests
     repoURL: https://github.com/viruskizz/job-interview-7solution-devops
     targetRevision: main
   sources: []
